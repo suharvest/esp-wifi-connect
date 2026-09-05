@@ -593,6 +593,32 @@
                     <input type="checkbox" id="sleep_mode" name="sleep_mode">
                 </div>
 
+                <!-- Static IP Configuration -->
+                <p style="display: flex; align-items: center; gap: 10px;">
+                    <label for="static_ip_enabled" style="margin: 0;">
+                        <span data-lang="static_ip_enabled">Use Static IP</span>
+                    </label>
+                    <input type="checkbox" id="static_ip_enabled" name="static_ip_enabled" onchange="toggleStaticIp()">
+                </p>
+                <div id="static_ip_fields" style="display: none;">
+                    <p>
+                        <label for="static_ip" data-lang="static_ip">IP Address:</label>
+                        <input type="text" id="static_ip" name="static_ip" placeholder="192.168.1.100">
+                    </p>
+                    <p>
+                        <label for="static_gateway" data-lang="static_gateway">Gateway:</label>
+                        <input type="text" id="static_gateway" name="static_gateway" placeholder="192.168.1.1">
+                    </p>
+                    <p>
+                        <label for="static_netmask" data-lang="static_netmask">Subnet Mask:</label>
+                        <input type="text" id="static_netmask" name="static_netmask" placeholder="255.255.255.0">
+                    </p>
+                    <p>
+                        <label for="static_dns" data-lang="static_dns">DNS Server:</label>
+                        <input type="text" id="static_dns" name="static_dns" placeholder="223.5.5.5">
+                    </p>
+                </div>
+
                 <p>
                     <input type="submit" value="Save" id="advanced_button" data-lang-value="save">
                 </p>
@@ -627,6 +653,11 @@
                 max_tx_power: 'أقصى قوة إرسال Wi-Fi:',
                 remember_bssid: 'تذكر BSSID عند الاتصال بـ Wi-Fi',
                 sleep_mode: 'تمكين وضع السكون',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'حفظ',
                 config_success: 'تم التكوين بنجاح!'
             },
@@ -646,6 +677,11 @@
                 max_tx_power: 'Макс. мощност на предаване Wi-Fi:',
                 remember_bssid: 'Запомни BSSID при свързване към Wi-Fi',
                 sleep_mode: 'Активиране на режим на заспиване',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Запазване',
                 config_success: 'Конфигурацията е успешна!'
             },
@@ -665,6 +701,11 @@
                 max_tx_power: 'Potència màxima TX Wi-Fi:',
                 remember_bssid: 'Recordar BSSID en connectar a Wi-Fi',
                 sleep_mode: 'Activar mode de suspensió',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Desar',
                 config_success: 'Configuració completada correctament!'
             },
@@ -684,6 +725,11 @@
                 max_tx_power: 'Max. vysílací výkon Wi-Fi:',
                 remember_bssid: 'Pamatovat si BSSID při připojení k Wi-Fi',
                 sleep_mode: 'Povolit režim spánku',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Uložit',
                 config_success: 'Konfigurace byla úspěšná!'
             },
@@ -703,6 +749,11 @@
                 max_tx_power: 'Wi-Fi maks. TX-effekt:',
                 remember_bssid: 'Husk BSSID ved forbindelse til Wi-Fi',
                 sleep_mode: 'Aktiver dvaletilstand',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Gem',
                 config_success: 'Konfigurationen lykkedes!'
             },
@@ -722,6 +773,11 @@
                 max_tx_power: 'Wi-Fi Max. Sendeleistung:',
                 remember_bssid: 'BSSID beim Verbinden mit Wi-Fi merken',
                 sleep_mode: 'Schlafmodus aktivieren',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Speichern',
                 config_success: 'Konfiguration erfolgreich!'
             },
@@ -741,6 +797,11 @@
                 max_tx_power: 'Μέγιστη ισχύς μετάδοσης Wi-Fi:',
                 remember_bssid: 'Απομνημόνευση BSSID κατά τη σύνδεση σε Wi-Fi',
                 sleep_mode: 'Ενεργοποίηση λειτουργίας αναστολής',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Αποθήκευση',
                 config_success: 'Η διαμόρφωση ολοκληρώθηκε με επιτυχία!'
             },
@@ -760,6 +821,11 @@
                 max_tx_power: 'Wi-Fi Max TX Power:',
                 remember_bssid: 'Remember BSSID when connecting to Wi-Fi',
                 sleep_mode: 'Enable Sleep Mode',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Save',
                 config_success: 'Configuration successful!'
             },
@@ -779,6 +845,11 @@
                 max_tx_power: 'Potencia máxima TX Wi-Fi:',
                 remember_bssid: 'Recordar BSSID al conectarse a Wi-Fi',
                 sleep_mode: 'Activar modo de suspensión',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Guardar',
                 config_success: '¡Configuración exitosa!'
             },
@@ -798,6 +869,11 @@
                 max_tx_power: 'حداکثر قدرت انتقال Wi-Fi:',
                 remember_bssid: 'به خاطر سپردن BSSID هنگام اتصال به Wi-Fi',
                 sleep_mode: 'فعال کردن حالت خواب',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'ذخیره',
                 config_success: 'پیکربندی با موفقیت انجام شد!'
             },
@@ -817,6 +893,11 @@
                 max_tx_power: 'Wi-Fi maks. lähetysteho:',
                 remember_bssid: 'Muista BSSID yhdistettäessä Wi-Fi-verkkoon',
                 sleep_mode: 'Ota lepotila käyttöön',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Tallenna',
                 config_success: 'Määritys onnistui!'
             },
@@ -836,6 +917,11 @@
                 max_tx_power: 'Wi-Fi Max TX Power:',
                 remember_bssid: 'Tandaan ang BSSID kapag kumokonekta sa Wi-Fi',
                 sleep_mode: 'I-enable ang Sleep Mode',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'I-save',
                 config_success: 'Matagumpay ang configuration!'
             },
@@ -855,6 +941,11 @@
                 max_tx_power: 'Puissance TX maximale Wi-Fi:',
                 remember_bssid: 'Mémoriser le BSSID lors de la connexion au Wi-Fi',
                 sleep_mode: 'Activer le mode veille',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Enregistrer',
                 config_success: 'Configuration réussie !'
             },
@@ -874,6 +965,11 @@
                 max_tx_power: 'הספק שידור מקסימלי Wi-Fi:',
                 remember_bssid: 'זכור BSSID בעת התחברות ל-Wi-Fi',
                 sleep_mode: 'הפעל מצב שינה',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'שמור',
                 config_success: 'ההגדרה הושלמה בהצלחה!'
             },
@@ -893,6 +989,11 @@
                 max_tx_power: 'Wi-Fi अधिकतम TX पावर:',
                 remember_bssid: 'Wi-Fi से कनेक्ट करते समय BSSID याद रखें',
                 sleep_mode: 'स्लीप मोड सक्षम करें',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'सहेजें',
                 config_success: 'कॉन्फ़िगरेशन सफल!'
             },
@@ -912,6 +1013,11 @@
                 max_tx_power: 'Wi-Fi maksimalna TX snaga:',
                 remember_bssid: 'Zapamti BSSID pri povezivanju na Wi-Fi',
                 sleep_mode: 'Omogući način spavanja',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Spremi',
                 config_success: 'Konfiguracija uspješna!'
             },
@@ -931,6 +1037,11 @@
                 max_tx_power: 'Wi-Fi max. adási teljesítmény:',
                 remember_bssid: 'BSSID megjegyzése Wi-Fi csatlakozáskor',
                 sleep_mode: 'Alvó mód engedélyezése',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Mentés',
                 config_success: 'Sikeres konfiguráció!'
             },
@@ -950,6 +1061,11 @@
                 max_tx_power: 'Daya Pancar Maks Wi-Fi:',
                 remember_bssid: 'Ingat BSSID saat menghubungkan ke Wi-Fi',
                 sleep_mode: 'Aktifkan Mode Tidur',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Simpan',
                 config_success: 'Konfigurasi berhasil!'
             },
@@ -969,6 +1085,11 @@
                 max_tx_power: 'Potenza TX massima Wi-Fi:',
                 remember_bssid: 'Ricorda BSSID durante la connessione al Wi-Fi',
                 sleep_mode: 'Abilita modalità sospensione',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Salva',
                 config_success: 'Configurazione riuscita!'
             },
@@ -988,6 +1109,11 @@
                 max_tx_power: 'Wi-Fi最大送信電力:',
                 remember_bssid: 'Wi-Fi接続時にBSSIDを記憶する',
                 sleep_mode: 'スリープモードを有効にする',
+                static_ip_enabled: '静的IPを使用',
+                static_ip: 'IPアドレス:',
+                static_gateway: 'ゲートウェイ:',
+                static_netmask: 'サブネットマスク:',
+                static_dns: 'DNSサーバー:',
                 save: '保存',
                 config_success: '設定が完了しました！'
             },
@@ -1007,6 +1133,11 @@
                 max_tx_power: 'Wi-Fi 최대 송신 전력:',
                 remember_bssid: 'Wi-Fi 연결 시 BSSID 기억',
                 sleep_mode: '절전 모드 활성화',
+                static_ip_enabled: '고정 IP 사용',
+                static_ip: 'IP 주소:',
+                static_gateway: '게이트웨이:',
+                static_netmask: '서브넷 마스크:',
+                static_dns: 'DNS 서버:',
                 save: '저장',
                 config_success: '설정이 완료되었습니다!'
             },
@@ -1026,6 +1157,11 @@
                 max_tx_power: 'Kuasa TX Maksimum Wi-Fi:',
                 remember_bssid: 'Ingat BSSID semasa menyambung ke Wi-Fi',
                 sleep_mode: 'Dayakan Mod Tidur',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Simpan',
                 config_success: 'Konfigurasi berjaya!'
             },
@@ -1045,6 +1181,11 @@
                 max_tx_power: 'Wi-Fi maks. sendeeffekt:',
                 remember_bssid: 'Husk BSSID ved tilkobling til Wi-Fi',
                 sleep_mode: 'Aktiver hvilemodus',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Lagre',
                 config_success: 'Konfigurasjonen var vellykket!'
             },
@@ -1064,6 +1205,11 @@
                 max_tx_power: 'Wi-Fi max. zendvermogen:',
                 remember_bssid: 'BSSID onthouden bij verbinden met Wi-Fi',
                 sleep_mode: 'Slaapmodus inschakelen',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Opslaan',
                 config_success: 'Configuratie gelukt!'
             },
@@ -1083,6 +1229,11 @@
                 max_tx_power: 'Maksymalna moc nadawania Wi-Fi:',
                 remember_bssid: 'Zapamiętaj BSSID podczas łączenia z Wi-Fi',
                 sleep_mode: 'Włącz tryb uśpienia',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Zapisz',
                 config_success: 'Konfiguracja zakończona sukcesem!'
             },
@@ -1102,6 +1253,11 @@
                 max_tx_power: 'Potência TX máxima Wi-Fi:',
                 remember_bssid: 'Lembrar BSSID ao ligar ao Wi-Fi',
                 sleep_mode: 'Ativar modo de suspensão',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Guardar',
                 config_success: 'Configuração bem-sucedida!'
             },
@@ -1121,6 +1277,11 @@
                 max_tx_power: 'Putere maximă TX Wi-Fi:',
                 remember_bssid: 'Reține BSSID la conectarea la Wi-Fi',
                 sleep_mode: 'Activează modul de repaus',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Salvare',
                 config_success: 'Configurare reușită!'
             },
@@ -1140,6 +1301,11 @@
                 max_tx_power: 'Макс. мощность передачи Wi-Fi:',
                 remember_bssid: 'Запомнить BSSID при подключении к Wi-Fi',
                 sleep_mode: 'Включить режим сна',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Сохранить',
                 config_success: 'Настройка успешно завершена!'
             },
@@ -1159,6 +1325,11 @@
                 max_tx_power: 'Max. vysielací výkon Wi-Fi:',
                 remember_bssid: 'Zapamätať si BSSID pri pripojení k Wi-Fi',
                 sleep_mode: 'Povoliť režim spánku',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Uložiť',
                 config_success: 'Konfigurácia bola úspešná!'
             },
@@ -1178,6 +1349,11 @@
                 max_tx_power: 'Wi-Fi maks. oddajna moč:',
                 remember_bssid: 'Zapomni si BSSID ob povezovanju na Wi-Fi',
                 sleep_mode: 'Omogoči način spanja',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Shrani',
                 config_success: 'Konfiguracija uspešna!'
             },
@@ -1197,6 +1373,11 @@
                 max_tx_power: 'Wi-Fi максимална снага преноса:',
                 remember_bssid: 'Запамти BSSID приликом повезивања на Wi-Fi',
                 sleep_mode: 'Омогући режим спавања',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Сачувај',
                 config_success: 'Конфигурација је успешна!'
             },
@@ -1216,6 +1397,11 @@
                 max_tx_power: 'Wi-Fi max. sändningseffekt:',
                 remember_bssid: 'Kom ihåg BSSID vid anslutning till Wi-Fi',
                 sleep_mode: 'Aktivera viloläge',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Spara',
                 config_success: 'Konfigurationen lyckades!'
             },
@@ -1235,6 +1421,11 @@
                 max_tx_power: 'กำลังส่งสูงสุด Wi-Fi:',
                 remember_bssid: 'จำ BSSID เมื่อเชื่อมต่อกับ Wi-Fi',
                 sleep_mode: 'เปิดใช้งานโหมดสลีป',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'บันทึก',
                 config_success: 'กำหนดค่าสำเร็จ!'
             },
@@ -1254,6 +1445,11 @@
                 max_tx_power: 'Wi-Fi Maks. İletim Gücü:',
                 remember_bssid: 'Wi-Fi\'ye bağlanırken BSSID\'yi hatırla',
                 sleep_mode: 'Uyku Modunu Etkinleştir',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Kaydet',
                 config_success: 'Yapılandırma başarılı!'
             },
@@ -1273,6 +1469,11 @@
                 max_tx_power: 'Макс. потужність передачі Wi-Fi:',
                 remember_bssid: 'Запам\'ятати BSSID при підключенні до Wi-Fi',
                 sleep_mode: 'Увімкнути режим сну',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Зберегти',
                 config_success: 'Налаштування успішно завершено!'
             },
@@ -1292,6 +1493,11 @@
                 max_tx_power: 'Công suất phát Wi-Fi tối đa:',
                 remember_bssid: 'Ghi nhớ BSSID khi kết nối với Wi-Fi',
                 sleep_mode: 'Bật chế độ ngủ',
+                static_ip_enabled: 'Use Static IP',
+                static_ip: 'IP Address:',
+                static_gateway: 'Gateway:',
+                static_netmask: 'Subnet Mask:',
+                static_dns: 'DNS Server:',
                 save: 'Lưu',
                 config_success: 'Cấu hình thành công!'
             },
@@ -1311,6 +1517,11 @@
                 max_tx_power: 'Wi-Fi 最大发射功率:',
                 remember_bssid: '连接 Wi-Fi 时记住 BSSID',
                 sleep_mode: '启用睡眠模式',
+                static_ip_enabled: '使用静态 IP',
+                static_ip: 'IP 地址:',
+                static_gateway: '网关:',
+                static_netmask: '子网掩码:',
+                static_dns: 'DNS 服务器:',
                 save: '保存',
                 config_success: '配置成功！'
             },
@@ -1330,6 +1541,11 @@
                 max_tx_power: 'Wi-Fi 最大發射功率:',
                 remember_bssid: '連接 Wi-Fi 時記住 BSSID',
                 sleep_mode: '啟用睡眠模式',
+                static_ip_enabled: '使用靜態 IP',
+                static_ip: 'IP 位址:',
+                static_gateway: '閘道:',
+                static_netmask: '子網路遮罩:',
+                static_dns: 'DNS 伺服器:',
                 save: '儲存',
                 config_success: '設定成功！'
             }
@@ -1665,7 +1881,12 @@
                 ota_url: document.getElementById('ota_url').value,
                 max_tx_power: parseInt(document.getElementById('max_tx_power').value),
                 remember_bssid: document.getElementById('remember_bssid').checked,
-                sleep_mode: document.getElementById('sleep_mode').checked
+                sleep_mode: document.getElementById('sleep_mode').checked,
+                static_ip_enabled: document.getElementById('static_ip_enabled').checked,
+                static_ip: document.getElementById('static_ip').value,
+                static_gateway: document.getElementById('static_gateway').value,
+                static_netmask: document.getElementById('static_netmask').value,
+                static_dns: document.getElementById('static_dns').value
             };
 
             try {
@@ -1749,6 +1970,22 @@
                 if (data.sleep_mode !== undefined) {
                     document.getElementById('sleep_mode').checked = data.sleep_mode;
                 }
+                if (data.static_ip_enabled !== undefined) {
+                    document.getElementById('static_ip_enabled').checked = data.static_ip_enabled;
+                    toggleStaticIp();
+                }
+                if (data.static_ip) {
+                    document.getElementById('static_ip').value = data.static_ip;
+                }
+                if (data.static_gateway) {
+                    document.getElementById('static_gateway').value = data.static_gateway;
+                }
+                if (data.static_netmask) {
+                    document.getElementById('static_netmask').value = data.static_netmask;
+                }
+                if (data.static_dns) {
+                    document.getElementById('static_dns').value = data.static_dns;
+                }
             } catch (error) {
                 console.error('Error loading advanced config:', error);
             }
@@ -1759,6 +1996,11 @@
          */
         function clearOtaUrl() {
             document.getElementById('ota_url').value = '';
+        }
+
+        function toggleStaticIp() {
+            const enabled = document.getElementById('static_ip_enabled').checked;
+            document.getElementById('static_ip_fields').style.display = enabled ? 'block' : 'none';
         }
 
         // ========== Initialization ==========
